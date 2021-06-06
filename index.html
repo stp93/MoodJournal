@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>MoodJournal</title>
+  </head>
+  <body class="light-mode">
+    <i class="fa fa-moon" id="dark" onclick="darkMode()"></i>
+
+    <div class="container">
+      <!-- <input type="checkbox" name="Dark Theme" id="dark" onclick="darkMode()" />
+      <h1>Mood Journal</h1> -->
+      <i id="logo" class="fas fa-journal-whills"> Track Your Mood</i>
+
+      <form id="book-form">
+        <div class="form-group">
+          <label for="Title">Current Mood</label>
+          <input type="text" autocomplete="off" id="title" />
+        </div>
+        <div class="form-group">
+          <input type="color" name="mood-color" id="author" />
+        </div>
+        <!-- <div class="form-group">
+          <label for="Author">Author</label>
+          <input type="text" autocomplete="off" id="author" />
+        </div> -->
+        <!-- <div class="form-group">
+          <label for="mood">Mood</label>
+          <input type="text" autocomplete="off" id="mood" />
+        </div> -->
+
+        <div class="form-group">
+          <label for="isbn">Date</label>
+          <input type="datetime-local" autocomplete="on" id="isbn" />
+        </div>
+        <div class="form-group">
+          <label for="entry">Entry</label>
+          <textarea name="Journal Entry" id="entry"></textarea>
+        </div>
+        <input type="submit" value="Add Entry" class="btn" />
+      </form>
+    </div>
+    <section class="entry-section">
+      <table class="table">
+        <!-- <thead>
+          <tr>
+            <th>Title</th>
+          </tr>
+          <tr>
+            <th>Author</th>
+          </tr>
+          <tr>
+            <th>Entry</th>
+          </tr>
+          <tr>
+            <th></th>
+          </tr>
+        </thead> -->
+        <tbody id="book-list"></tbody>
+      </table>
+    </section>
+    <script src="app.js"></script>
+    <script
+      src="https://kit.fontawesome.com/ea32bddd01.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

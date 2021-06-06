@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.dark-mode {
+  background: linear-gradient(#252b38, #333);
+  color: #d8dee6;
+}
+.dark-mode i {
+  color: #8bb1e4;
+}
+.dark-mode .btn {
+  background: linear-gradient(#78bdce, #67a2b1);
+  color: #222222;
+}
+.light-mode {
+  background: linear-gradient(#3c81da, #6295d8);
+  color: #222222;
+}
+.light-mode i {
+  color: #252b38;
+}
+.light-mode .btn {
+  background: linear-gradient(#111a1d, #0b2025);
+  color: #8bb1e4;
+}
+#dark {
+  position: fixed;
+  cursor: pointer;
+  height: 32px;
+  top: 2vh;
+  left: 90vw;
+}
+.alert-red {
+  width: 100%;
+  background-color: #e42e2e;
+  position: relative;
+  color: #ffff;
+}
+.alert-success {
+  width: 100%;
+  background-color: #2ee42e;
+  position: relative;
+  color: #ffff;
+}
+.container {
+  text-align: center;
+}
+#logo {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+}
+form {
+  margin: 2rem 15vw;
+}
+i {
+  color: #040b14;
+  padding: 0.5rem 0;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-between;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+input {
+  height: 1.25rem;
+}
+
+form .btn {
+  margin-top: 1rem;
+  width: 100%;
+  height: 1.5rem;
+  border: none;
+  border-radius: 7px;
+}
+
+#entry:focus {
+  transform: scale(1.2);
+  transition: 0.5s ease-in-out;
+}
+
+table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+thead {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+tbody {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+tr {
+  font-family: sans-serif;
+  background-color: #67a2b1;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+td {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+td a {
+  height: 100%;
+  width: auto;
+  background-color: #e42e2e;
+}
+.entry-date {
+  display: none;
+}
+
+.entry-title,
+.entry-author,
+.entry-text {
+  width: 33%;
+}
+.entry-text {
+  overflow: hidden;
+}
