@@ -1,3 +1,8 @@
+let loadingWrapper = document.querySelector('.loading-wrapper')
+
+window.addEventListener('load', ()=>{
+    loadingWrapper.parentElement.removeChild(loadingWrapper)
+})
 const dark = document.getElementById('dark'),
                 body = document.querySelector('body'),
                 darkColor = `dark-mode`,
@@ -7,12 +12,12 @@ const dark = document.getElementById('dark'),
 
 // book class represents an entry, object
 class Book{
-    constructor(title,author,isbn,entry, mood){
+    constructor(title,author,isbn,entry){
         this.title = title;
         this.author = author;
         this.isbn = isbn;
         this.entry = entry
-        this.mood = mood
+        
     }
 }
 
@@ -43,7 +48,6 @@ class UI{
         row.innerHTML = `
             
             <td class="entry-title">${book.title}</td>
-            <td class="mood-text">${book.mood}
             <td class="entry-text">${book.entry}</td>
             <td class="entry-date">${book.isbn}</td>
             <td><a href="#" class="btn delete">X</a></td>
@@ -75,7 +79,6 @@ class UI{
     static clearFields(){
         document.getElementById('title').value = '';
         document.getElementById('author').value ='';
-        document.getElementById('mood').value = '';
         document.getElementById('isbn').value = '';
         document.getElementById('entry').value = '';
     }
@@ -146,15 +149,15 @@ document.getElementById('book-form',addEventListener('submit',(e)=>{
     const author = document.getElementById('author').value;
     const isbn = document.getElementById('isbn').value;
     const entry = document.getElementById('entry').value;
-    const mood = document.getElementById('mood').value;
+    //const mood = document.getElementById('mood').value;
 
     //validate
-    if(title == '' || author == '' || isbn == '' || entry == '' || mood == ''){
+    if(title == '' || author == '' || isbn == '' || entry == '' ){
         UI.showAlert('Enter something for today','red');
     }else{
 
     //instantiate book
-    const book = new Book(title,author,isbn,entry, mood);
+    const book = new Book(title,author,isbn,entry);
     //console.log(book)
 
     //addbook to UI
