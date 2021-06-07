@@ -8,7 +8,8 @@ const dark = document.getElementById('dark'),
                 darkColor = `dark-mode`,
                 lightColor = `light-mode`,
                 sun = `fa fa-sun`,
-                moon = `fa fa-moon`;
+                moon = `fa fa-moon`,
+                overflow = document.querySelector('.entry-text');
 
 // book class represents an entry, object
 class Book{
@@ -44,14 +45,14 @@ class UI{
     static addBookToList(book){
         const list = document.getElementById('book-list');
 
-        const row = document.createElement('tr');
+        const row = document.createElement('div');
         row.innerHTML = `
-            
-            <td class="entry-title">${book.title}</td>
-            <td class="entry-text">${book.entry}</td>
-            <td class="entry-date">${book.isbn}</td>
-            <td><a href="#" class="btn delete">X</a></td>
-            
+            <div class="entry-row">
+            <div class="entry-title">${book.title}</div>
+            <div class="entry-text">${book.entry}</div>
+            <div class="entry-date">${book.isbn}</div>
+            <div class="entry-delete"><a href="#" class="btn delete">X</a></div>
+            </div>
         `;
         row.style.backgroundColor = book.author;
 
@@ -83,11 +84,17 @@ class UI{
         document.getElementById('entry').value = '';
     }
 }
+function expandRow(){
+    if(overflow.className === `overflow`){
+        overflow.className.remove = (`overflow`)
+        overflow.className = `expand`
+    }else{
+        overflow.className = `overflow`
+        overflow.className.remove = `expand`
+    }
+}
 //dark mode changer ///////////////////////////////////////////////
 function darkMode(){
-        
-        
-
         if(body.className === `light-mode`){
             dark.className = sun;
             body.className = darkColor;
@@ -104,10 +111,6 @@ function darkMode(){
             localStorage.setItem('className', lightColor);
             localStorage.setItem('icon',moon)
         }
-            
-
-            
-
     }
 //store class handles storage local/////////////////////////////////////////////////////////
 class Store {
